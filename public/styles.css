@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: rgb(19, 18, 18);
+    opacity: 1;
+}
+nav .page-icon{
+    color: white;
+}
+nav .page-icon h2{
+    position: relative;
+    left: 40px;
+}
+nav .page-icon p{    
+    font-size: smaller;
+    position: relative;
+    left: 10px;
+}
+nav ul{
+    position: absolute;
+    right: 100px;
+    top: 18px;
+}
+nav ul li{
+    display: inline-block;
+    margin-right:20px ;
+}
+nav ul li a{
+    text-decoration-line: none;
+    color: wheat;
+}
+.page-banner{
+    background-image: url(./images/confetti.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+.mid-section{
+    height: 500px;
+    width: 100%;
+    padding-top: 3%;
+    background: rgb(255,255,255);
+    background: linear-gradient(24deg, rgba(255,255,255,1) 37%, rgba(255,200,216,1) 78%, rgba(255,135,135,1) 100%); 
+}
+.mid-section .heading{
+    width: 60%;
+    margin: 0 auto;
+}
+.mid-section .heading h2,.mid-section .heading p{
+    text-align: center;
+    line-height: 1.5em;
+}
+.mid-section .heading h2{
+    color: #df5353;
+    font-family: 'Chilanka', cursive;
+    font-size: 2.6em;
+    font-weight: bolder;
+}
+.mid-section .heading p{
+   color: #4d2424;
+   font-family: 'Noto Sans', sans-serif;
+}
+.mid-section .mid-container{
+    width: 80%;
+    margin: 3% auto;
+}
+.mid-section .mid-container .box{
+    width: 30%;
+    margin: 10px;
+    height: 300px;
+    display: inline-block;
+    background: rgb(86,2,89);
+    background: linear-gradient(24deg, rgba(86,2,89,1) 36%, rgba(94,41,41,1) 100%); 
+}
+.customers{
+    width: 100%;
+    height: 390px;
+    background: rgb(255,250,255);
+    background: linear-gradient(176deg, rgba(255,250,255,1) 30%, rgba(255,117,117,1) 100%); 
+}
+footer{
+    height: 100px;
+    background-color: rgb(201, 78, 78);  
+}
+.copyright{
+    position: relative;
+}
+.copyright p{
+    position: absolute;
+    top:50px;
+    left:600px;
+}
