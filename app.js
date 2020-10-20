@@ -13,3 +13,6 @@ mongoose.connect('mongodb://localhost/blogSite',{useNewUrlParser: true, useUnifi
 app.get('/',(req,res)=>{
     res.send('We are at homepage');
 })
+
+//404 page
+app.use((req,res)=>res.status(404).send('404 page not found'));
