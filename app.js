@@ -8,3 +8,8 @@ mongoose.connect('mongodb://localhost/blogSite',{useNewUrlParser: true, useUnifi
 .then(()=>app.listen(3000,()=>console.log('connected to database...')))
 .catch(err=>console.log(err));
 
+//testing the app
+
+app.get('/',(req,res)=>{
+    res.send('We are at homepage');
+})
