@@ -16,8 +16,13 @@ app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
     res.render('home',{title:'Home'});
-})
+});
 
-
+app.get('/blogs',(req,res)=>{
+    res.render('blogs',{title:'Blogs'})
+});
+app.get('/users/blogs-create',(req,res)=>{
+    res.render('blogCreate',{title:'Create your blog'})
+});
 // 404 page
-app.use((req,res)=>res.status(404).send('404 page not found'));
+app.use((req,res)=>res.status(404).render('404'));
