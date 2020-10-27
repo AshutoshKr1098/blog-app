@@ -3,7 +3,30 @@
 <%- include('./partials/header.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h2>Blogs</h2>
+    <div class="emptyDiv" style="height: 50px;"></div>
+    <div class="showblogs">  
+        <% if(blogs.length==0){ %>
+            <h2>No Blogs to show</h2>    
+        <% } else { %>
+            <h2>Blogs</h2>
+            <ul>
+                <% blogs.forEach(blog=>{ %>                                     
+                    <li class="blog"> 
+                        <form action="/blogs/users/blog-delete" method="POST" class="delete-blog">
+                            <input type="hidden" value="<%= blog._id %>" name="blogId">
+                            <button type="submit">delete</button>
+                        </form>
+                        <h2 class="title"><%= blog.blogTitle%></h2>
+                        <p class="snippet"><%= blog.blogSnippet%></p>
+                        <p class="body"><%= blog.blogBody%></p>
+                    </li>
+                <% }) %>
+            </ul>
+            
+        <% } %>           
+
+    </div>
+    
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
