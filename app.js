@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 const userRoutes = require('./routes/userRoutes');
+const cookieParser = require('cookie-parser');
 //connect to database locally
 
 mongoose.connect('mongodb://localhost/blogSite',{useNewUrlParser: true, useUnifiedTopology: true})
@@ -14,7 +15,7 @@ app.set('view engine','ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
-
+app.use(cookieParser());
 //testing the app
 
 app.get('/',(req,res)=>{
