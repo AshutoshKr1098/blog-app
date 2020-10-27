@@ -1,0 +1,44 @@
+.auth .container{
+    background-color: white;
+    width: 30%;
+    margin: 30px auto;
+    padding: 30px;
+}
+.auth .container form label {
+    display: block;
+    text-align: left;
+    margin-left: 15%;
+    
+}
+.auth .container form input{
+    display: block;
+    margin: 20px auto;
+    color: gray;
+    width: 80%;
+    height: 40px;
+    padding: 5px 20px;    
+}
+.auth form .error{
+    width: 60%;
+    text-align: center;
+    color:rgb(196, 43, 43); 
+    font-size: medium;
+    background-color: rgb(248, 211, 223);   
+    position: relative;
+    left:42px;
+    top:0px;
+    margin-bottom: 10px;
+}
+.auth .container form button{
+    padding: 10px;
+    width: 120px;
+    position: relative;
+    left:12%;
+    background-color: rgb(230, 73, 73);
+    color: white;
+    border: 5px solid  rgb(230, 73, 73);
+    border-radius: 10px;
+}
+.auth .container form button:hover{
+    background-color: rgb(228, 92, 92);
+}

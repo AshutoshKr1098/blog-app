@@ -1,0 +1,62 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
+<div class="emptyDiv" style="height: 50px;"></div>
+<div class="auth">
+    <h2 class="signup-h2" style="text-align: center;">Signup</h2>
+    <div class="container">
+        <form action="/users/signup">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter username" autocomplete="off">
+            <p class="username error"></p>
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" placeholder="Enter email"autocomplete="off">
+            <p class="email error"></p>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" placeholder="Enter password"autocomplete="off">
+            <p class="password error"></p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+    
+   <script>
+       const form = document.querySelector('form');
+       const usernameError = document.querySelector('.username.error');
+        const emailError = document.querySelector('.email.error');
+        const passwordError=document.querySelector('.password.error');
+       form.addEventListener('submit',async (e)=>{
+           e.preventDefault();
+           const username = form.username.value;
+           const email = form.email.value;
+           const password = form.password.value;
+           usernameError.textContent='';
+           passwordError.textContent='';
+           emailError.textContent='';
+
+           console.log({username,email,password});
+           try{
+            const response = await fetch('/users/signup',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                } ,
+                body:JSON.stringify({username,email,password})                               
+            });
+            const data = await response.json();
+            console.log(data);   
+            if(data.error){
+                usernameError.textContent = data.error.username;
+                emailError.textContent = data.error.email;
+                passwordError.textContent = data.error.password;
+            } 
+            if(data.user){
+                location.assign('/users/login');
+            }                         
+            }  
+            catch(err){
+                console.log('error recieved from server',err);
+            }    
+       })
+   </script>
+    
+<%- include('./partials/footer.ejs') %>

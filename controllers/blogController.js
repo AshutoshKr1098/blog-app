@@ -23,7 +23,8 @@ module.exports.postCreateBlogs = (req,res)=>{
     blog.save()
     .then(result=>{
         console.log('database save result',result);
-        res.status(201).json(result);
+        res.redirect('/blogs/all-blogs');
+        
     })
     .catch(err=>{
         console.log('database save error',err);

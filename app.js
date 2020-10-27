@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
+const userRoutes = require('./routes/userRoutes');
 //connect to database locally
 
 mongoose.connect('mongodb://localhost/blogSite',{useNewUrlParser: true, useUnifiedTopology: true})
@@ -19,6 +20,7 @@ app.use(express.static('public'));
 app.get('/',(req,res)=>{
     res.render('home',{title:'Home'});
 });
+app.use('/users',userRoutes);
 
 app.use('/blogs',blogRoutes);
 
